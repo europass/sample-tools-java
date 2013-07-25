@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class table="ecv_education" name="eu.europa.cedefop.europass.jtool.model.Education">
+    <id name="id" column="id">
+      <generator class="native">
+        <param name="sequence">d_id_seq</param>
+      </generator>
+    </id>
+    <many-to-one column="xml_id" foreign-key="ecv_education_ibfk_1" name="xml"/>
+    <property name="title" column="title"/>
+    <property name="subject" column="subject"/>
+    <property name="orgName" column="org_name"/>
+    <property name="orgType" column="org_type"/>
+    <property name="orgAddress" column="org_address"/>
+    <property name="orgMunic" column="org_munic"/>
+    <property name="orgZcode" column="org_zcode"/>
+    <property name="countryCode" column="code_country"/>
+    <property name="country" column="country"/>
+    <property name="codeLevel" column="code_level"/>
+    <property name="level" column="edulevel"/>
+    <property name="codeEduField" column="code_edu_field"/>
+    <property name="eduField" column="edu_field"/>
+    <property name="dayFrom" column="day_from"/>
+    <property name="dayTo" column="day_to"/>
+    <property name="monthFrom" column="month_from"/>
+    <property name="monthTo" column="month_to"/>
+    <property name="yearFrom" column="year_from"/>
+    <property name="yearTo" column="year_to"/>
+  </class>
+</hibernate-mapping>

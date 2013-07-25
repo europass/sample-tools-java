@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class table="ecv_driving_licence" name="eu.europa.cedefop.europass.jtool.model.DrivingLicence">
+    <id name="id" column="id">
+      <generator class="native">
+        <param name="sequence">d_id_seq</param>
+      </generator>
+    </id>
+    <many-to-one column="xml_id" foreign-key="ecv_driving_licence_ibfk_1" name="xml"/>
+    <property name="drivingSkill" column="driving_skill"/>
+  </class>
+</hibernate-mapping>

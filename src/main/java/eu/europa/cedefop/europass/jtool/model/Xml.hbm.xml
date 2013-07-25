@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class table="ecv_xml" name="eu.europa.cedefop.europass.jtool.model.Xml">
+    <id name="id" column="id">
+      <generator class="native">
+        <param name="sequence">d_id_seq</param>
+      </generator>
+    </id>
+    <property name="lname" column="lname"/>
+    <property name="fname" column="fname"/>
+    <property name="address" column="address"/>
+    <property name="munic" column="munic"/>
+    <property name="postalCode" column="postal_code"/>
+    <property name="countryCode" column="code_country"/>
+    <property name="country" column="country"/>
+    <property name="phone" column="phone"/>
+    <property name="fax" column="fax"/>
+    <property name="mobile" column="mobile"/>
+    <property name="gender" column="gender"/>
+    <property name="birthDate" column="birthdate"/>
+    <property name="photo" column="photo"/>
+    <property name="applCode" column="code_application"/>
+    <property name="appl" column="application"/>
+    <property name="social" column="social"/>
+    <property name="org" column="organisational"/>
+    <property name="tech" column="technical"/>
+    <property name="computer" column="computer"/>
+    <property name="artistic" column="artistic"/>
+    <property name="other" column="other"/>
+    <property name="additional" column="additional"/>
+    <property name="annexes" column="annexes"/>
+    <property name="motherLang" column="mother_language"/>
+    <property name="motherLangCode" column="code_mother_language"/>
+    <property name="email" column="email"/>
+    <property name="photoType" column="photo_type"/>
+  </class>
+</hibernate-mapping>
