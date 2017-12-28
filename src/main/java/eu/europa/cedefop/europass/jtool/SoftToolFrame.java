@@ -48,7 +48,7 @@ import eu.europa.cedefop.europass.jtool.util.SoftToolUtil;
 
 /**
  * This is the main frame of the application
- * @author Gomosidis Apostolos, Quality & Reliability S.A.
+ * @author Eworx S.A.
  * @version %I%, %G%
  * @since 1.0
  */
@@ -172,7 +172,7 @@ public class SoftToolFrame extends JFrame {
         fc.showOpenDialog(this);
         File selFile = fc.getSelectedFile();
         if (selFile==null || !selFile.getName().toUpperCase().endsWith(".PDF")) {
-            if (selFile!=null)
+            if (selFile != null)
                 JOptionPane.showMessageDialog(this, "Wrong file type (must be .pdf)" );
         } else {            
             int option = JOptionPane.showOptionDialog(this, 
@@ -191,7 +191,7 @@ public class SoftToolFrame extends JFrame {
                         //                        
                         logs = SoftToolUtil.savePDFXML(selFile);
                         //
-                        if (logs!=null && logs.startsWith("Error:")) {
+                        if (logs != null && logs.startsWith("Error:")) {
                             this.statusBar.setForeground(Color.RED);
                         } else {
                             this.statusBar.setForeground(Color.BLUE);
@@ -217,7 +217,7 @@ public class SoftToolFrame extends JFrame {
          fc.showOpenDialog(this);
          File selFile = fc.getSelectedFile();
          if (selFile==null || !selFile.getName().toUpperCase().endsWith(".XML")) {
-             if (selFile!=null)
+             if (selFile != null)
                  JOptionPane.showMessageDialog(this, "Wrong file type (must be .pdf)" );
          } else {             
              int option = JOptionPane.showOptionDialog(this, 
@@ -236,7 +236,7 @@ public class SoftToolFrame extends JFrame {
                          //                         
                          logs = SoftToolUtil.saveFile(selFile);
                          //
-                         if (logs!=null && logs.startsWith("Error:")) {
+                         if (logs != null && logs.startsWith("Error:")) {
                              this.statusBar.setForeground(Color.RED);
                          } else {
                              this.statusBar.setForeground(Color.BLUE);

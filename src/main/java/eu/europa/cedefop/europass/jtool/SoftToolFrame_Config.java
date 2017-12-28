@@ -43,7 +43,7 @@ import eu.europa.cedefop.europass.jtool.util.SoftToolUtil;
 
 /**
  * The Configuration dialog box
- * @author Gomosidis Apostolos, Quality & Reliability S.A.
+ * @author Eworx S.A.
  * @version %I%, %G%
  * @since 1.0
  */

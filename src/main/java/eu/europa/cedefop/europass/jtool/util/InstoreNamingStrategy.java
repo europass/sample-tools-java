@@ -29,7 +29,7 @@ import org.hibernate.cfg.NamingStrategy;
 
 /**
  * This class is a helpful class for hibernate configuration
- * @author Gomosidis Apostolos, Quality & Reliability S.A.
+ * @author Eworx S.A.
  * @version %I%, %G%
  * @since 1.0
  */

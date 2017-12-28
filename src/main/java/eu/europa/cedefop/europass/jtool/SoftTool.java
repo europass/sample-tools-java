@@ -33,7 +33,7 @@ import javax.swing.UIManager;
 
 /** 
  * This class implements an application that simply stores the XML data from a file to the database.
- * @author Gomosidis Apostolos, Quality & Reliability S.A.
+ * @author Eworx S.A.
  * @version %I%, %G%
  * @since 1.0
  */

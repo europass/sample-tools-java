@@ -12,7 +12,6 @@
     <property name="title" column="title"/>
     <property name="subject" column="subject"/>
     <property name="orgName" column="org_name"/>
-    <property name="orgType" column="org_type"/>
     <property name="orgAddress" column="org_address"/>
     <property name="orgMunic" column="org_munic"/>
     <property name="orgZcode" column="org_zcode"/>

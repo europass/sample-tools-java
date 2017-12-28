@@ -16,8 +16,8 @@
     <property name="countryCode" column="code_country"/>
     <property name="country" column="country"/>
     <property name="phone" column="phone"/>
-    <property name="fax" column="fax"/>
-    <property name="mobile" column="mobile"/>
+    <property name="phone2" column="phone2"/>
+    <property name="phone3" column="phone3"/>
     <property name="gender" column="gender"/>
     <property name="birthDate" column="birthdate"/>
     <property name="photo" column="photo"/>
@@ -25,9 +25,8 @@
     <property name="appl" column="application"/>
     <property name="social" column="social"/>
     <property name="org" column="organisational"/>
-    <property name="tech" column="technical"/>
+    <property name="jobRelated" column="job_related"/>
     <property name="computer" column="computer"/>
-    <property name="artistic" column="artistic"/>
     <property name="other" column="other"/>
     <property name="additional" column="additional"/>
     <property name="annexes" column="annexes"/>

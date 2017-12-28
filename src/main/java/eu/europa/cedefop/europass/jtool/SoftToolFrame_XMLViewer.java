@@ -47,7 +47,7 @@ import eu.europa.cedefop.europass.jtool.util.SoftToolUtil;
 
 /**
  * The XML viewer
- * @author Gomosidis Apostolos, Quality & Reliability S.A.
+ * @author Eworx S.A.
  * @version %I%, %G%
  * @since 1.0
  */
@@ -95,7 +95,7 @@ public class SoftToolFrame_XMLViewer extends JPanel {
         fileContent.setBorder(BorderFactory.createEmptyBorder(4, 4, 4, 4));
         
         labelTitle.setText( "File: "+this.selFile.getName() );
-        String fileline=null;
+        String fileline = null;
         // Get the file content
          try {
                fis = new FileInputStream(this.selFile);
@@ -111,8 +111,12 @@ public class SoftToolFrame_XMLViewer extends JPanel {
                    }
                }               
                fis.close();
-               bis.close();
-               dis.close();
+               if (bis!= null) {
+                   bis.close();
+               }
+               if (dis!= null) {
+                   dis.close();
+               }
          } catch (Exception e) {
              System.out.println("Error: " + "(init xml viewer)" + e.getMessage());
          }

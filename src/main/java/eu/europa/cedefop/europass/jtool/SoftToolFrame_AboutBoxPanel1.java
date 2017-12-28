@@ -35,7 +35,7 @@ import javax.swing.border.Border;
 
 /**
  * The Help About dialog box
- * @author Gomosidis Apostolos, Quality & Reliability S.A.
+ * @author Eworx S.A.
  * @version %I%, %G%
  * @since 1.0
  */
@@ -71,10 +71,10 @@ public class SoftToolFrame_AboutBoxPanel1 extends JPanel {
         this.setLayout( layoutMain );
         this.setBorder( border );
         labelTitle.setText( "Europass Java Standalone Application" );
-        labelAuthor.setText( "Author: Quality & Reliability S.A." );
-        labelDeveloper.setText( "Developer: Gomosidis Apostolos" );
-        labelCopyright.setText( "Copyright 2010" );
-        labelCompany.setText( "Company: Quality & Reliability S.A." );
+        labelAuthor.setText( "Author: Eworx S.A." );
+        labelDeveloper.setText( "Developed by: Eworx S.A." );
+        labelCopyright.setText( "Copyright 2017" );
+        labelCompany.setText( "Company: Eworx S.A." );
         labelVersion.setText( "Version: 1.0" );
         this.add( labelTitle, new GridBagConstraints(0, 0, 1, 1, 0.0, 0.0, GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(5, 15, 0, 15), 0, 0) );
         this.add( labelAuthor, new GridBagConstraints(0, 1, 1, 1, 0.0, 0.0, GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(0, 15, 0, 15), 0, 0) );        

@@ -15,7 +15,6 @@
     <property name="monthTo" column="month_to"/>
     <property name="yearFrom" column="year_from"/>
     <property name="yearTo" column="year_to"/>
-    <property name="codePos" column="code_position"/>
     <property name="pos" column="wposition"/>
     <property name="activities" column="activities"/>
     <property name="emplName" column="employer_name"/>
@@ -24,7 +23,6 @@
     <property name="emplZcode" column="employer_zcode"/>
     <property name="countryCode" column="code_country"/>
     <property name="country" column="country"/>
-    <property name="codeSector" column="code_sector"/>
     <property name="sector" column="sector"/>
   </class>
 </hibernate-mapping>

@@ -35,15 +35,15 @@ import org.hibernate.cfg.*;
 
  /**
   * This class contains all the necessary methods to connect with databases using hibernate.  
-  * @author Gomosidis Apostolos, Quality & Reliability S.A.
+  * @author Eworx S.A.
   * @version %I%, %G%
   * @since 1.0
   */
 public class HibernateUtil  {  
   
   public static final SessionFactory sessionFactory;
-  private static Configuration cfg=null;
-  private static SessionFactory hibfactory=null;
+  private static Configuration cfg = null;
+  private static SessionFactory hibfactory = null;
   static {
     try {
       Configuration config = new Configuration();

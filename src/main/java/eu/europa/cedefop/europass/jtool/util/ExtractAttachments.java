@@ -47,7 +47,7 @@ import org.apache.commons.logging.LogFactory;
 
 /**
  * This class extract the attachment files from a PDF file.
- * @author Gomosidis Apostolos, Quality & Reliability S.A.
+ * @author Eworx S.A.
  * @version %I%, %G%
  * @since 1.0
  */

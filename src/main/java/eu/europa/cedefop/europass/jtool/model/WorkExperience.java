@@ -38,7 +38,6 @@ public class WorkExperience {
     private String monthTo;
     private String yearFrom;
     private String yearTo;    
-    private String codePos;
     private String pos;
     private String activities;
     private String emplName;
@@ -47,7 +46,6 @@ public class WorkExperience {
     private String emplZcode;
     private String countryCode;
     private String country;
-    private String codeSector;
     private String sector;
     
     public void setId(Long id) {
@@ -141,17 +139,6 @@ public class WorkExperience {
         return yearTo;
     }
 
-    public void setCodePos(String codePos) {
-        this.codePos = codePos;
-    }
-    /**
-     * @hibernate.property column="code_position"
-     * @return
-     */
-    public String getCodePos() {
-        return codePos;
-    }
-
     public void setPos(String pos) {
         this.pos = pos;
     }
@@ -238,17 +225,6 @@ public class WorkExperience {
      */
     public String getCountry() {
         return country;
-    }
-
-    public void setCodeSector(String codeSector) {
-        this.codeSector = codeSector;
-    }
-    /**
-     * @hibernate.property column="code_sector"
-     * @return
-     */
-    public String getCodeSector() {
-        return codeSector;
     }
 
     public void setSector(String sector) {

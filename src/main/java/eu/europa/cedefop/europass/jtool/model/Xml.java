@@ -14,8 +14,8 @@ public class Xml {
     private String countryCode;
     private String country;
     private String phone;
-    private String fax;
-    private String mobile;
+    private String phone2;
+    private String phone3;
     private String gender;
     private String birthDate;    
     private byte[] photo;   
@@ -23,9 +23,8 @@ public class Xml {
     private String appl;
     private String social;
     private String org;
-    private String tech;
+    private String jobRelated;
     private String computer;
-    private String artistic;
     private String other;
     private String additional;
     private String annexes;
@@ -136,26 +135,26 @@ public class Xml {
         return phone;
     }
 
-    public void setFax(String fax) {
-        this.fax = fax;
+    public void setPhone2(String phone2) {
+        this.phone2 = phone2;
     }
     /**
-     * @hibernate.property column="fax"
+     * @hibernate.property column="phone2"
      * @return
      */
-    public String getFax() {
-        return fax;
+    public String getPhone2() {
+        return phone2;
     }
 
-    public void setMobile(String mobile) {
-        this.mobile = mobile;
+    public void setPhone3(String phone3) {
+        this.phone3 = phone3;
     }
     /**
-     * @hibernate.property column="mobile"
+     * @hibernate.property column="phone3"
      * @return
      */
-    public String getMobile() {
-        return mobile;
+    public String getPhone3() {
+        return phone3;
     }
 
     public void setGender(String gender) {
@@ -235,15 +234,15 @@ public class Xml {
         return org;
     }
 
-    public void setTech(String tech) {
-        this.tech = tech;
+    public void setJobRelated(String jobRelated) {
+        this.jobRelated = jobRelated;
     }
     /**
-     * @hibernate.property column="technical"
+     * @hibernate.property column="job_related"
      * @return
      */
-    public String getTech() {
-        return tech;
+    public String getJobRelated() {
+        return jobRelated;
     }
 
     public void setComputer(String computer) {
@@ -255,17 +254,6 @@ public class Xml {
      */
     public String getComputer() {
         return computer;
-    }
-
-    public void setArtistic(String artistic) {
-        this.artistic = artistic;
-    }
-    /**
-     * @hibernate.property column="artistic"
-     * @return
-     */
-    public String getArtistic() {
-        return artistic;
     }
 
     public void setOther(String other) {

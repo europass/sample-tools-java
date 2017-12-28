@@ -35,7 +35,6 @@ public class Education {
     private String title;
     private String subject;
     private String orgName;
-    private String orgType;
     private String orgAddress;
     private String orgMunic;
     private String orgZcode;
@@ -108,17 +107,6 @@ public class Education {
      */
     public String getOrgName() {
         return orgName;
-    }
-
-    public void setOrgType(String orgType) {
-        this.orgType = orgType;
-    }
-    /**
-     * @hibernate.property column="org_type"
-     * @return
-     */
-    public String getOrgType() {
-        return orgType;
     }
 
     public void setOrgAddress(String orgAddress) {
