@@ -594,7 +594,7 @@ public class SoftToolUtil {
                     if (fLang.getNodeType() == Node.ELEMENT_NODE) {
 
                         Node tmp = XPathAPI.selectSingleNode(fLang, "Description/Code");
-                        if (tmp.getFirstChild() != null) lngCode = tmp.getFirstChild().getNodeValue();
+                        if (tmp != null && tmp.getFirstChild() != null) lngCode = tmp.getFirstChild().getNodeValue();
                         tmp = XPathAPI.selectSingleNode(fLang, "Description/Label");
                         if (tmp.getFirstChild() != null) lng = tmp.getFirstChild().getNodeValue();
                         tmp = XPathAPI.selectSingleNode(fLang, "ProficiencyLevel/Listening");
