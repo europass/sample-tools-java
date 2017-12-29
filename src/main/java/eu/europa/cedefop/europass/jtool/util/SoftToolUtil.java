@@ -780,7 +780,7 @@ public class SoftToolUtil {
                 FileUtils.deleteDirectory(tempFolder);
             }
             catch (IOException e) {
-                System.out.println("Cannot cleanup temp folder, files are in use ..");
+                System.out.println("Temp files to delete are in use ..");
             }
         }
 
