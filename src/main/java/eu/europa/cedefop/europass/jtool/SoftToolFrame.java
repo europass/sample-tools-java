@@ -166,7 +166,7 @@ public class SoftToolFrame extends JFrame {
      * @param e the action event
      */    
     void fileOpenPDFXML_ActionPerformed(ActionEvent e) {
-        String filename = File.separator+"tmp";
+        String filename = File.separator + "tmp";
         String logs = null;
         JFileChooser fc = new JFileChooser(new File(filename));
         fc.showOpenDialog(this);
@@ -188,9 +188,9 @@ public class SoftToolFrame extends JFrame {
                 case 0: 
                         this.statusBar.setForeground(Color.BLACK);
                         this.statusBar.setText( "Saving data..." );
-                        //                        
-                        logs = SoftToolUtil.savePDFXML(selFile);
-                        //
+
+                        logs = SoftToolUtil.savePDFXML(selFile, SoftToolUtil.getProperty("temp_path_folder"));
+
                         if (logs != null && logs.startsWith("Error:")) {
                             this.statusBar.setForeground(Color.RED);
                         } else {
@@ -202,7 +202,6 @@ public class SoftToolFrame extends JFrame {
                 default: 
                         break;                        
             }            
-            //
         }
     }
     
@@ -211,14 +210,14 @@ public class SoftToolFrame extends JFrame {
   * @param e the action event
   */     
     void fileOpenXML_ActionPerformed(ActionEvent e){
-         String filename = File.separator+"tmp";
+         String filename = File.separator + "tmp";
          String logs = null;
          JFileChooser fc = new JFileChooser(new File(filename));
          fc.showOpenDialog(this);
          File selFile = fc.getSelectedFile();
          if (selFile==null || !selFile.getName().toUpperCase().endsWith(".XML")) {
              if (selFile != null)
-                 JOptionPane.showMessageDialog(this, "Wrong file type (must be .pdf)" );
+                 JOptionPane.showMessageDialog(this, "Wrong file type (must be .xml)" );
          } else {             
              int option = JOptionPane.showOptionDialog(this, 
                                                   new SoftToolFrame_XMLViewer( selFile ), 
@@ -233,21 +232,19 @@ public class SoftToolFrame extends JFrame {
                  case 0: 
                          this.statusBar.setForeground(Color.BLACK);
                          this.statusBar.setText( "Saving data..." );
-                         //                         
+
                          logs = SoftToolUtil.saveFile(selFile);
-                         //
+
                          if (logs != null && logs.startsWith("Error:")) {
                              this.statusBar.setForeground(Color.RED);
                          } else {
                              this.statusBar.setForeground(Color.BLUE);
                          }
                          this.statusBar.setText( logs );
-                         //
-                         break;                
+                         break;
                  default: 
                          break;                        
              }                                                                       
-             //
          }
     }
     

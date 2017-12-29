@@ -680,10 +680,9 @@ public class SoftToolUtil {
      * This method is used only to temporary save the XML file.   
      * @return the temporary XML file
      */
-    public static File createTempFile() throws Exception {
+    public static File createTempFile(final File tempFolder) throws Exception {
         File tempFile = null;
         try {
-            File tempFolder = new File("");
             tempFile = File.createTempFile("CV-", ".xml", tempFolder);
             if ( !tempFile.exists() )
             throw new Exception("TempFile creation fails!!!");
@@ -698,18 +697,21 @@ public class SoftToolUtil {
      * @param selFile the PDF selected file
      * @return the logs of the saving
      */
-    public static String savePDFXML(File selFile) {
+    public static String savePDFXML(File selFile, final String folderPath) {
         String xmlData = "";
         File tempFile = null;
+        File tempFolder = null;
         FileInputStream in = null;
         InputStream is = null;
         String logs = null;
         try {
             // Extract the XML to a temp file
-            tempFile = SoftToolUtil.createTempFile();
+            tempFolder = new File(folderPath);
+            tempFolder.mkdirs();
+            tempFile = SoftToolUtil.createTempFile(tempFolder);
             in = new FileInputStream(selFile);
             try {
-                final ExtractAttachments tool = new ExtractAttachments(in, tempFile);
+                final WebServiceExtractXML tool = new WebServiceExtractXML(selFile.getPath(), tempFile.getPath());
                 tool.execute();
             } finally {
                 if (in != null) {
@@ -727,7 +729,12 @@ public class SoftToolUtil {
         } catch(Exception ee) {
             return "Error: "+" (reading extracted xml from PDF) "+ee.getMessage();
         } finally {
-            tempFile.delete();
+            try {
+                FileUtils.deleteDirectory(tempFolder);
+            }
+            catch (IOException e) {
+                System.out.println("Cannot cleanup temp folder !!");
+            }
         }
 
         return logs;
@@ -738,24 +745,27 @@ public class SoftToolUtil {
       * @param selFile the PDF selected file
       * @return the InputStream of the XML file
       */
-    public static InputStream getXML(File selFile) {
+    public static InputStream getXML(File selFile, final String folderPath) {
         String xmlData = "";
         File tempFile = null;
+        File tempFolder = null;
         FileInputStream in = null;
         InputStream is = null;
         try {
             // Extract the XML to a temp file
-            tempFile = SoftToolUtil.createTempFile();
+            tempFolder = new File(folderPath);
+            tempFolder.mkdirs();
+            tempFile = SoftToolUtil.createTempFile(tempFolder);
             in = new FileInputStream(selFile);
             try {
-                ExtractAttachments tool = new ExtractAttachments(in, tempFile);
+                final WebServiceExtractXML tool = new WebServiceExtractXML(selFile.getPath(), tempFile.getPath());
                 tool.execute();
             } finally {
                 if (in != null) {
                     try {
-                    in.close();
+                        in.close();
                     } catch (Exception ignore) {
-                    System.out.println("Error: "+ " (extracting XML from PDF) " +ignore);
+                        System.out.println("Error: "+ " (extracting XML from PDF) " +ignore);
                     }
                 }
             }
@@ -766,8 +776,14 @@ public class SoftToolUtil {
             System.out.println("Error: "+ " (reading XML from PDF) " +ee);
             return null;
         } finally {
-            tempFile.delete();
+            try {
+                FileUtils.deleteDirectory(tempFolder);
+            }
+            catch (IOException e) {
+                System.out.println("Cannot cleanup temp folder, files are in use ..");
+            }
         }
+
         return is;
     }
      

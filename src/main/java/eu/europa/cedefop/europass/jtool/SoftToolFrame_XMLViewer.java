@@ -100,7 +100,7 @@ public class SoftToolFrame_XMLViewer extends JPanel {
          try {
                fis = new FileInputStream(this.selFile);
                if (this.selFile.getName().toUpperCase().endsWith(".PDF")) {
-            	    dis = new BufferedReader(new InputStreamReader(SoftToolUtil.getXML(this.selFile)));
+            	    dis = new BufferedReader(new InputStreamReader(SoftToolUtil.getXML(this.selFile, SoftToolUtil.getProperty("temp_path_folder"))));
                    while ((fileline = dis.readLine()) != null) {
                       fileContent.append(fileline+ "\n"); 
                    }
