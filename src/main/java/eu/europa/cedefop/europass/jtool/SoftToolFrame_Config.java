@@ -1,28 +1,28 @@
 package eu.europa.cedefop.europass.jtool;
 
-   /*
-		* Copyright European Union 2002-2010
-		*
-		*
-		* Licensed under the EUPL, Version 1.1 or – as soon they 
-		* will be approved by the European Commission - subsequent  
-		* versions of the EUPL (the "Licence"); 
-		* You may not use this work except in compliance with the 
-		* Licence. 
-		* You may obtain a copy of the Licence at: 
-		*
-		* http://ec.europa.eu/idabc/eupl.html
-		*
-		*  
-		* Unless required by applicable law or agreed to in 
-		* writing, software distributed under the Licence is 
-		* distributed on an "AS IS" basis, 
-		* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either 
-		* express or implied. 
-		* See the Licence for the specific language governing 
-		* permissions and limitations under the Licence. 
-		*
-		*/
+/*
+*   Copyright European Union 2002-2010
+*
+*
+*   Licensed under the EUPL, Version 1.1 or – as soon they
+*   will be approved by the European Commission - subsequent
+*   versions of the EUPL (the "Licence");
+*   You may not use this work except in compliance with the
+*   Licence.
+*   You may obtain a copy of the Licence at:
+*
+*   http://ec.europa.eu/idabc/eupl.html
+*
+*
+*   Unless required by applicable law or agreed to in
+*   writing, software distributed under the Licence is
+*   distributed on an "AS IS" basis,
+*   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+*   express or implied.
+*   See the Licence for the specific language governing
+*   permissions and limitations under the Licence.
+*
+*/
 
 import java.awt.Font;
 import java.awt.GridBagConstraints;
@@ -70,9 +70,9 @@ public class SoftToolFrame_Config extends JPanel {
     private GridBagLayout layoutMain = new GridBagLayout();
     private Border border = BorderFactory.createEtchedBorder();        
 
-/**
- * Class constructor
- */
+    /**
+     * Class constructor
+     */
     public SoftToolFrame_Config() {    
         try {            
             jbInit();                    
@@ -81,12 +81,13 @@ public class SoftToolFrame_Config extends JPanel {
         }
     }
 
-/**
+    /**
      * Initializing the content of the configuration dialog box.
      * @throws Exception
      */
     private void jbInit() throws Exception {
-        Font fnt = new Font( "Arial", Font.BOLD, 12); 
+
+        final Font fnt = new Font("Arial", Font.BOLD, 12);
         
         this.setLayout( layoutMain );
         this.setBorder( border );
@@ -100,50 +101,76 @@ public class SoftToolFrame_Config extends JPanel {
         labelPassword.setFont(fnt);                
         
         fldURL.setFont(fnt);        
-        fldURL.setText( SoftToolUtil.getProperty("url") );        
+        fldURL.setText(SoftToolUtil.getProperty("url"));
         fldDatabasename.setFont(fnt);        
-        fldDatabasename.setText( SoftToolUtil.getProperty("databasename") );   
+        fldDatabasename.setText(SoftToolUtil.getProperty("databasename"));
         fldUsername.setFont(fnt);        
-        fldUsername.setText( SoftToolUtil.getProperty("username") );   
+        fldUsername.setText(SoftToolUtil.getProperty("username"));
         fldPassword.setFont(fnt);        
-        fldPassword.setText( SoftToolUtil.getProperty("password") );          
+        fldPassword.setText(SoftToolUtil.getProperty("password"));
         
         sqlServer.setFont(fnt);
-        sqlServer.addActionListener( new ActionListener() { public void actionPerformed( ActionEvent ae ) { sqlServer_ActionPerformed( ae ); } } );
-        if ("1".equals(SoftToolUtil.getProperty("default_database"))) 
+        sqlServer.addActionListener(new ActionListener() { public void actionPerformed(ActionEvent ae) { sqlServer_ActionPerformed(ae); }});
+        if ("1".equals(SoftToolUtil.getProperty("default_database"))) {
             sqlServer.setSelected(true);
-        else 
+        }
+        else {
             sqlServer.setSelected(false);
-            
+        }
+
         mySQL.setFont(fnt);
-        mySQL.addActionListener( new ActionListener() { public void actionPerformed( ActionEvent ae ) { mySQL_ActionPerformed( ae ); } } );
-        if ("2".equals(SoftToolUtil.getProperty("default_database"))) 
+        mySQL.addActionListener(new ActionListener() { public void actionPerformed(ActionEvent ae) { mySQL_ActionPerformed(ae); }});
+        if ("2".equals(SoftToolUtil.getProperty("default_database"))) {
             mySQL.setSelected(true);
-        else 
+        }
+        else {
             mySQL.setSelected(false);
-            
+        }
+
         oracle.setFont(fnt);
-        oracle.addActionListener( new ActionListener() { public void actionPerformed( ActionEvent ae ) { oracle_ActionPerformed( ae ); } } );
-        if ("3".equals(SoftToolUtil.getProperty("default_database"))) 
+        oracle.addActionListener(new ActionListener() { public void actionPerformed(ActionEvent ae) { oracle_ActionPerformed(ae); }});
+        if ("3".equals(SoftToolUtil.getProperty("default_database"))) {
             oracle.setSelected(true);
-        else 
+        }
+        else {
             oracle.setSelected(false);
+        }
             
-        this.add( labelTitle, new GridBagConstraints(0, 0, 1, 1, 0.0, 0.0, GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(5, 15, 0, 15), 0, 0) );        
+        this.add(labelTitle, new GridBagConstraints(0, 0, 1, 1, 0.0, 0.0,
+                GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(5, 15, 0, 15), 0, 0));
         
-        this.add( labelURL, new GridBagConstraints(0, 20, 50, 15, 0.0, 0.0, GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(5, 15, 0, 15), 0, 0) );        
-        this.add( fldURL, new GridBagConstraints(50, 20, 50, 15, 0.0, 0.0, GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(5, 15, 0, 15), 0, 0) );                
-        this.add( labelDatabasename, new GridBagConstraints(0, 40, 50, 15, 0.0, 0.0, GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(5, 15, 0, 15), 0, 0) );        
-        this.add( fldDatabasename, new GridBagConstraints(50, 40, 50, 15, 0.0, 0.0, GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(5, 15, 0, 15), 0, 0) );                
-        this.add( labelUsername, new GridBagConstraints(0, 60, 50, 15, 0.0, 0.0, GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(5, 15, 0, 15), 0, 0) );        
-        this.add( fldUsername, new GridBagConstraints(50, 60, 50, 15, 0.0, 0.0, GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(5, 15, 0, 15), 0, 0) );                
-        this.add( labelPassword, new GridBagConstraints(0, 80, 50, 15, 0.0, 0.0, GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(5, 15, 0, 15), 0, 0) );        
-        this.add( fldPassword, new GridBagConstraints(50, 80, 50, 15, 0.0, 0.0, GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(5, 15, 0, 15), 0, 0) );                
-        
-        this.add( sqlServer, new GridBagConstraints(0, 100, 30, 15, 0.0, 0.0, GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(5, 15, 0, 15), 0, 0) );                
-        this.add( mySQL, new GridBagConstraints(30, 100, 30, 15, 0.0, 0.0, GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(5, 15, 0, 15), 0, 0) );                
-        this.add( oracle, new GridBagConstraints(60, 100, 30, 15, 0.0, 0.0, GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(5, 15, 0, 15), 0, 0) );                                
-        
+        this.add(labelURL, new GridBagConstraints(0, 20, 50, 15, 0.0, 0.0,
+                GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(5, 15, 0, 15), 0, 0));
+
+        this.add(fldURL, new GridBagConstraints(50, 20, 50, 15, 0.0, 0.0,
+                GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(5, 15, 0, 15), 0, 0));
+
+        this.add(labelDatabasename, new GridBagConstraints(0, 40, 50, 15, 0.0, 0.0,
+                GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(5, 15, 0, 15), 0, 0));
+
+        this.add(fldDatabasename, new GridBagConstraints(50, 40, 50, 15, 0.0, 0.0,
+                GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(5, 15, 0, 15), 0, 0));
+
+        this.add(labelUsername, new GridBagConstraints(0, 60, 50, 15, 0.0, 0.0,
+                GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(5, 15, 0, 15), 0, 0));
+
+        this.add(fldUsername, new GridBagConstraints(50, 60, 50, 15, 0.0, 0.0,
+                GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(5, 15, 0, 15), 0, 0));
+
+        this.add(labelPassword, new GridBagConstraints(0, 80, 50, 15, 0.0, 0.0,
+                GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(5, 15, 0, 15), 0, 0));
+
+        this.add(fldPassword, new GridBagConstraints(50, 80, 50, 15, 0.0, 0.0,
+                GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(5, 15, 0, 15), 0, 0));
+
+        this.add(sqlServer, new GridBagConstraints(0, 100, 30, 15, 0.0, 0.0,
+                GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(5, 15, 0, 15), 0, 0));
+
+        this.add(mySQL, new GridBagConstraints(30, 100, 30, 15, 0.0, 0.0,
+                GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(5, 15, 0, 15), 0, 0));
+
+        this.add(oracle, new GridBagConstraints(60, 100, 30, 15, 0.0, 0.0,
+                GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(5, 15, 0, 15), 0, 0));
     }
     
     /**
@@ -206,7 +233,7 @@ public class SoftToolFrame_Config extends JPanel {
      * @param e the action event
      */
     void mySQL_ActionPerformed(ActionEvent e) {
-        if (this.mySQL.isSelected()==true) {            
+        if (this.mySQL.isSelected() == true) {
             this.sqlServer.setSelected(false);
             this.oracle.setSelected(false);
         } else {
@@ -219,7 +246,7 @@ public class SoftToolFrame_Config extends JPanel {
      * @param e the action event
      */
     void oracle_ActionPerformed(ActionEvent e) {
-        if (this.oracle.isSelected()==true) {            
+        if (this.oracle.isSelected() == true) {
             this.mySQL.setSelected(false);
             this.sqlServer.setSelected(false);
         } else {

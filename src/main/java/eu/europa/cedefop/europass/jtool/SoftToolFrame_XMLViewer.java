@@ -1,28 +1,28 @@
 package eu.europa.cedefop.europass.jtool;
 
-   /*
-		* Copyright European Union 2002-2010
-		*
-		*
-		* Licensed under the EUPL, Version 1.1 or – as soon they 
-		* will be approved by the European Commission - subsequent  
-		* versions of the EUPL (the "Licence"); 
-		* You may not use this work except in compliance with the 
-		* Licence. 
-		* You may obtain a copy of the Licence at: 
-		*
-		* http://ec.europa.eu/idabc/eupl.html
-		*
-		*  
-		* Unless required by applicable law or agreed to in 
-		* writing, software distributed under the Licence is 
-		* distributed on an "AS IS" basis, 
-		* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either 
-		* express or implied. 
-		* See the Licence for the specific language governing 
-		* permissions and limitations under the Licence. 
-		*
-		*/
+/*
+*   Copyright European Union 2002-2010
+*
+*
+*   Licensed under the EUPL, Version 1.1 or – as soon they
+*   will be approved by the European Commission - subsequent
+*   versions of the EUPL (the "Licence");
+*   You may not use this work except in compliance with the
+*   Licence.
+*   You may obtain a copy of the Licence at:
+*
+*   http://ec.europa.eu/idabc/eupl.html
+*
+*
+*   Unless required by applicable law or agreed to in
+*   writing, software distributed under the Licence is
+*   distributed on an "AS IS" basis,
+*   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+*   express or implied.
+*   See the Licence for the specific language governing
+*   permissions and limitations under the Licence.
+*
+*/
 
 import java.awt.Color;
 import java.awt.Font;
@@ -67,7 +67,7 @@ public class SoftToolFrame_XMLViewer extends JPanel {
      */
     public SoftToolFrame_XMLViewer(File selFile) {    
         try {
-            this.selFile=selFile;   
+            this.selFile = selFile;
             jbInit();                    
         } catch (Exception e) {
             e.printStackTrace();
@@ -79,13 +79,14 @@ public class SoftToolFrame_XMLViewer extends JPanel {
      * @throws Exception
      */
     private void jbInit() throws Exception {
-        Font fnt = new Font( "Arial", Font.BOLD, 12); 
+
+        final Font fnt = new Font("Arial", Font.BOLD, 12);
         FileInputStream fis = null;
         BufferedReader bis = null;
         BufferedReader dis = null;
-            
-        this.setLayout( layoutMain );
-        this.setBorder( border );
+
+        this.setLayout(layoutMain);
+        this.setBorder(border);
         this.setAutoscrolls(true);
         fileContent.setAutoscrolls(true);
         fileContent.setSelectedTextColor(Color.GREEN);
@@ -93,37 +94,44 @@ public class SoftToolFrame_XMLViewer extends JPanel {
         fileContent.setLineWrap(true);
         fileContent.setWrapStyleWord(true);
         fileContent.setBorder(BorderFactory.createEmptyBorder(4, 4, 4, 4));
-        
-        labelTitle.setText( "File: "+this.selFile.getName() );
+
+        labelTitle.setText("File: "+this.selFile.getName() );
         String fileline = null;
+
         // Get the file content
-         try {
-               fis = new FileInputStream(this.selFile);
-               if (this.selFile.getName().toUpperCase().endsWith(".PDF")) {
-            	    dis = new BufferedReader(new InputStreamReader(SoftToolUtil.getXML(this.selFile, SoftToolUtil.getProperty("temp_path_folder"))));
-                   while ((fileline = dis.readLine()) != null) {
-                      fileContent.append(fileline+ "\n"); 
-                   }
-               } else {
-                   bis = new BufferedReader(new InputStreamReader(fis));          
-                   while ((fileline = bis.readLine()) != null) {
-                      fileContent.append(fileline+ "\n"); 
-                   }
-               }               
-               fis.close();
-               if (bis!= null) {
-                   bis.close();
-               }
-               if (dis!= null) {
-                   dis.close();
-               }
-         } catch (Exception e) {
-             System.out.println("Error: " + "(init xml viewer)" + e.getMessage());
-         }
-        //                                
-        JScrollPane scrollingResult = new JScrollPane(fileContent, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);        
-        fileContent.setCaretPosition(0);                
-        this.add( labelTitle, new GridBagConstraints(0, 0, 1, 1, 0.0, 0.0, GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(5, 15, 0, 15), 0, 0) );        
-        this.add( scrollingResult, new GridBagConstraints(0, 1, 1, 1, 0.0, 0.0, GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(5, 15, 0, 15), 0, 0) );                                             
-    }
+        try {
+            fis = new FileInputStream(this.selFile);
+            if (this.selFile.getName().toUpperCase().endsWith(".PDF")) {
+                dis = new BufferedReader(new InputStreamReader(SoftToolUtil.getXML(this.selFile, SoftToolUtil.getProperty("temp_path_folder"))));
+                while ((fileline = dis.readLine()) != null) {
+                    fileContent.append(fileline+ "\n");
+                }
+            } else {
+                bis = new BufferedReader(new InputStreamReader(fis));
+                while ((fileline = bis.readLine()) != null) {
+                    fileContent.append(fileline+ "\n");
+                }
+            }
+
+            fis.close();
+            if (bis!= null) {
+                bis.close();
+            }
+            if (dis!= null) {
+                dis.close();
+            }
+        } catch (Exception e) {
+            System.out.println("Error: " + "(init xml viewer)" + e.getMessage());
+        }
+
+        final JScrollPane scrollingResult = new JScrollPane(fileContent, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,
+                                                                        JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+        fileContent.setCaretPosition(0);
+
+        this.add( labelTitle, new GridBagConstraints(0, 0, 1, 1, 0.0, 0.0,
+                GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(5, 15, 0, 15), 0, 0) );
+
+        this.add( scrollingResult, new GridBagConstraints(0, 1, 1, 1, 0.0, 0.0,
+                GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(5, 15, 0, 15), 0, 0) );
+        }
 }

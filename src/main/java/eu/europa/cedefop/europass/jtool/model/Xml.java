@@ -3,8 +3,9 @@ package eu.europa.cedefop.europass.jtool.model;
  * @hibernate.class table="ecv_xml"
  */
 public class Xml {
-    public Xml() {
-    }
+
+    public Xml() {}
+
     private Long id;
     private String lname;
     private String fname;
