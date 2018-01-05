@@ -26,8 +26,8 @@ System requirements
 
 Installation/ Run
 ==================
-1. Run **mvn install** in project root dir to build project.
-2. Start DB server.
+1. Start DB server.
+2. Run **mvn install** in project root dir to build project.
 3. Run main method of **SoftTool** class to run app. 
 
 From the main menu of app (File -> Configuration) or Config icon, user can configure DB systems (MS SQL, MySQL, Oracle) & properties to use.
