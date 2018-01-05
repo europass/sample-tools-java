@@ -32,5 +32,5 @@ Installation/ Run
 From the main menu of app (File -> Configuration) or Config icon, user can configure DB systems (MS SQL, MySQL, Oracle) & properties to use.
 This can be done also under resources/softtool.properties.
  
-Previously, user should run DB schema query to initialize all tables (all these are under resources/sql/*).
+Finally, user should run DB schema query to initialize all tables (all these are under resources/sql/*).
  
