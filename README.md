@@ -20,9 +20,9 @@ Technologies used
 
 System requirements
 ====================
-
 - JDK 7 or newer (http://www.oracle.com/technetwork/java/javase/downloads/index.html)
 - Apache Maven Project (http://maven.apache.org/download.cgi#Installation)
+- One of relational DB systems: MS SQL (https://www.microsoft.com/en-us/sql-server/sql-server-downloads)/ MySQL (https://dev.mysql.com/downloads/mysql/)/ Oracle (https://www.oracle.com/database/index.html) 
 
 Installation/ Run
 ==================
