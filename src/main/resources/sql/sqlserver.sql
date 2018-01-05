@@ -90,7 +90,7 @@ CREATE TABLE [dbo].[ecv_work_experience] (
 	[employer_munic] [varchar] (50) COLLATE Greek_CS_AS NULL ,
 	[employer_zcode] [varchar] (10) COLLATE Greek_CS_AS NULL ,
 	[code_country] [varchar] (3) COLLATE Greek_CS_AS NULL ,
-	[country] [varchar] (30) COLLATE Greek_CS_AS NULL ,
+	[country] [varchar] (50) COLLATE Greek_CS_AS NULL ,
 	[sector] [varchar] (50) COLLATE Greek_CS_AS NULL
 ) ON [PRIMARY]
 GO
